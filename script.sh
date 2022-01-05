@@ -33,6 +33,6 @@ case i in
    echo "$udata" >> result.html]
   ;;
 *)
-echo "You didn't enter any parameter"
+  echo "You didn't enter any parameter";;
 esac
 done
