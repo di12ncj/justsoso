@@ -9,8 +9,8 @@ url1="https://jksb.v.zzu.edu.cn/vls6sss/zzujksb.dll/login"
 url2="https://jksb.v.zzu.edu.cn/vls6sss/zzujksb.dll/jksb"
 for((i=0;i<num;i++))
 do
-case word in
-  i=0)[
+case i in
+  0)[
         curl -d "uid=${uidarr[i]}&upw=${upwarr[i]}&smbtn=$smbtn&hh28=907" -s $url1 -o temp.txt
         udata=$(sed -n '11p' temp.txt)
         udata=${udata#*ptopid=}
@@ -22,7 +22,7 @@ case word in
         udata=$(sed -n '24,26p' temp.txt)
         echo "$udata" > result.html]
   ;;
-  i=1)[curl -d "uid=${uidarr[i]}&upw=${upwarr[i]}&smbtn=$smbtn&hh28=907" -s $url1 -o temp.txt
+  1)[curl -d "uid=${uidarr[i]}&upw=${upwarr[i]}&smbtn=$smbtn&hh28=907" -s $url1 -o temp.txt
         udata=$(sed -n '11p' temp.txt)
         udata=${udata#*ptopid=}
         udata=${udata%\"\}\}*}
